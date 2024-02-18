@@ -22,7 +22,8 @@ const ConvColor = () => {
       return;
     }
 
-    const hexRGB: string[] = hex.match(/[\d\w]{2}/g);
+    const hexRGB: string[] | null = hex.match(/[\d\w]{2}/g);
+    if (!hexRGB) return;
     const r = parseInt(hexRGB[0], 16);
     const g = parseInt(hexRGB[1], 16);
     const b = parseInt(hexRGB[2], 16);

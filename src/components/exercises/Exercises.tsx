@@ -11,7 +11,10 @@ interface Form {
 
 const Exercises = () => {
   const [exercises, setExercises] = useState<Form[]>([]);
-  const [form, setForm] = useState<Form>({});
+  const [form, setForm] = useState<Form>({
+    date: 0,
+    distance: 0,
+  });
   const [date, setDate] = useState<string | undefined>(undefined);
   const [distance, setDistance] = useState<number | undefined>(undefined);
 
