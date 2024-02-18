@@ -16,7 +16,7 @@ const Exercises = () => {
     distance: 0,
   });
   const [date, setDate] = useState<string | undefined>(undefined);
-  const [distance, setDistance] = useState<number | undefined>(undefined);
+  const [distance, setDistance] = useState<string | undefined>(undefined);
 
   const handleDate = (e: ChangeEvent<HTMLInputElement>): void => {
     const str = e.target.value.replace(/[^\.\d]/g, '');
@@ -33,12 +33,11 @@ const Exercises = () => {
     });
   }
   const handleDistance = (e: ChangeEvent<HTMLInputElement>): void => {
-    const d = +e.target.value.replace(/[^\.\d]/g, '');
-
+    const d = e.target.value.replace(/[^\d.]+/g, '');
     setDistance(d);
     setForm({
       ...form,
-      distance: d,
+      distance: parseFloat(d),
     });
   }
   const onSubmit = (e: ChangeEvent<HTMLFormElement>): void => {
@@ -50,7 +49,7 @@ const Exercises = () => {
     if (exercIndex !== -1) {
       const updateForm = {
         ...form,
-        distance: exercClone[exercIndex].distance + form.distance,
+        distance: +(exercClone[exercIndex].distance + form.distance).toFixed(2),
       }
       exercClone[exercIndex] = updateForm;
     } else {
