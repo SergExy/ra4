@@ -46,7 +46,7 @@ const Exercises = () => {
 
     const exercClone = exercises.slice();
     const exercIndex = exercClone.findIndex(exerc => exerc.date === form.date);
-    console.log(exercIndex);
+
     if (exercIndex !== -1) {
       const updateForm = {
         ...form,
@@ -56,7 +56,6 @@ const Exercises = () => {
     } else {
       exercClone.push(form);
     }
-    console.log(exercClone);
 
     setExercises(exercClone.sort((a, b) => b.date - a.date));
   }
