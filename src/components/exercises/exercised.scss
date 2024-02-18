@@ -1,0 +1,69 @@
+.exercises {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+  }
+
+  &__group {
+    position: relative;
+  }
+
+  &__group + &__group {
+    margin-left: 15px;
+  }
+
+  &__label {
+    position: absolute;
+    top: -30px;
+  }
+
+  &__input {
+    padding: 10px 15px;
+    border: 1px solid #454545;
+    border-radius: 5px;
+  }
+
+  &__submit {
+    background: transparent;
+    margin-left: 15px;
+    padding: 10px 15px;
+    border: 1px solid #454545;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__table {
+    min-width: 600px;
+  }
+
+  &__tableBody {
+    border: 1px solid #454545;
+    border-radius: 5px;
+  }
+
+  &__row {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__column {
+    width: calc((100% / 3) - 20px);
+    flex-shrink: 0;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  &__remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
