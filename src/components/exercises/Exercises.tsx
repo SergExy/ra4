@@ -12,7 +12,7 @@ interface Form {
 const Exercises = () => {
   const [exercises, setExercises] = useState<Form[]>([]);
   const [form, setForm] = useState<Form>({
-    date: 0,
+    date: -1,
     distance: 0,
   });
   const [date, setDate] = useState<string | undefined>(undefined);
@@ -23,10 +23,10 @@ const Exercises = () => {
     setDate(str);
 
     const dateSplit = str.split('.');
-    if (dateSplit.length !== 3 || dateSplit[2].length !== 4 || +dateSplit[1] > 12) {
+    if (dateSplit.length !== 3 || dateSplit[2].length !== 4 || +dateSplit[1] > 11) {
       setForm({
         ...form,
-        date: 0,
+        date: -1,
       });
       return
     }
@@ -81,7 +81,7 @@ const Exercises = () => {
           <div className="exercises__label">Пройдено км</div>
           <Input name="distance" value={distance} onChange={handleDistance} placeholder="00" className="exercises__input" readOnly={false} />
         </div>
-        <button className="exercises__submit" disabled={!form.date || !form.distance}>OK</button>
+        <button className="exercises__submit" disabled={!(form.date === -1) || !form.distance}>OK</button>
       </form>
       <div className="exercises__table">
         <div className="exercises__tableHead">
