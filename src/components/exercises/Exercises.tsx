@@ -23,9 +23,9 @@ const Exercises = () => {
     setDate(str);
 
     const dateSplit = str.split('.');
-    if (dateSplit.length !== 3 || dateSplit[2].length !== 4) return;
+    if (dateSplit.length !== 3 || dateSplit[2].length !== 4 || +dateSplit[1] > 11) return;
 
-    const date = new Date(+dateSplit[2], +dateSplit[1] - 1, +dateSplit[0]);
+    const date = new Date(+dateSplit[2], +dateSplit[1], +dateSplit[0]);
 
     setForm({
       ...form,
