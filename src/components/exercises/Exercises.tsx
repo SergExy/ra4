@@ -81,7 +81,7 @@ const Exercises = () => {
           <div className="exercises__label">Пройдено км</div>
           <Input name="distance" value={distance} onChange={handleDistance} placeholder="00" className="exercises__input" readOnly={false} />
         </div>
-        <button className="exercises__submit" disabled={!(form.date === -1) || !form.distance}>OK</button>
+        <button className="exercises__submit" disabled={form.date !== -1 || !form.distance}>OK</button>
       </form>
       <div className="exercises__table">
         <div className="exercises__tableHead">
