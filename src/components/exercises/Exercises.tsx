@@ -23,7 +23,7 @@ const Exercises = () => {
     setDate(str);
 
     const dateSplit = str.split('.');
-    if (dateSplit.length !== 3 || dateSplit[2].length !== 4 || +dateSplit[1] > 11) {
+    if (dateSplit.length !== 3 || dateSplit[2].length !== 4 || +dateSplit[1] > 12) {
       setForm({
         ...form,
         date: 0,
